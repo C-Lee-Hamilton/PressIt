@@ -1,4 +1,4 @@
-import SmashSound from "../assets/sound/press-it-effect.mp3";
+import SmashSound from "../assets/sound/smashIt-effect.mp3";
 import { usePageContext } from "../PageContext";
 
 
@@ -7,13 +7,14 @@ import { usePageContext } from "../PageContext";
         const {checkAction,setSmashIt,setPullIt,setSpinIt,started,move,startGame}=usePageContext();
 
         const smashAudio:any = new Audio(SmashSound);
-        const smashAudioTrigger=smashAudio.play;
+       
         const press = () => {
             if (!started) return;
             setSpinIt(false);
             setPullIt(false);
             setSmashIt(true);
-            smashAudioTrigger;
+            smashAudio.volume=.2;
+            smashAudio.play();
             if (move === "Smash It!") {
               checkAction("Smash It!");
             } else {

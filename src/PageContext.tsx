@@ -42,7 +42,7 @@ export const PageProvider: React.FC<PageProviderProps> = ({ children }) => {
     const [started, setStarted] = useState<boolean>(false);
     const [score, setScore] = useState<number>(0);
     const [highScore, setHighScore] = useState<number>(0);
-    const moves = ["Twist It!", "Smash It!", "Pull It!"];
+    const moves = ["Spin It!", "Smash It!", "Pull It!"];
 
     const startGame = () => {
         setStarted(true);
@@ -50,6 +50,7 @@ export const PageProvider: React.FC<PageProviderProps> = ({ children }) => {
       };
 
     const getRandomMove= () => {
+ 
         const randomIndex = Math.floor(Math.random() * moves.length);
         setMove(moves[randomIndex]);
         setPullIt(false);
@@ -59,20 +60,23 @@ export const PageProvider: React.FC<PageProviderProps> = ({ children }) => {
       };
 
     const checkAction = (action:string) => {
+      setTimeout(() => {
         if (action === move) {
-         setScore((prevScore) => prevScore + 1);
-           if (score + 1 > highScore) {
-           setHighScore(score + 1);
-         }
-         getRandomMove();
-       } else {
-         setStarted(false);
-         setMove("You Lose");
-         setScore(0);
-         setSpinIt(false);
-         setSmashIt(false);
-         setPullIt(false);
-       }
+          setScore((prevScore) => prevScore + 1);
+            if (score + 1 > highScore) {
+            setHighScore(score + 1);
+          }
+          getRandomMove();
+        } else {
+          setStarted(false);
+          setMove("You Lose");
+          setScore(0);
+          setSpinIt(false);
+          setSmashIt(false);
+          setPullIt(false);
+        }
+      }, 500);
+      
      };
     
 

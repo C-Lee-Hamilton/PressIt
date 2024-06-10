@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SpinIMG from "../assets/twistGear.png";
-import SpinSound from "../assets/sound/twist-it-effect.mp3";
+import SpinIMG from "../assets/spinGear.png";
+import SpinSound from "../assets/sound/spinIt-effect.mp3";
 import { usePageContext } from "../PageContext";
 
 
@@ -9,19 +9,20 @@ import { usePageContext } from "../PageContext";
       const {started,move,setSmashIt,setPullIt,setSpinIt,checkAction}=usePageContext();
       const [spinClass,setSpinClass]=useState<string>("twist-img");
       const spinAudio:any = new Audio(SpinSound);
-      const spinAudioTrigger=spinAudio.play;
+      
       const spinClick = () => {
         if (!started) return;
         setSmashIt(false);
         setPullIt(false);
-        spinAudioTrigger;
+        spinAudio.volume=.2;
+        spinAudio.play();
         setSpinIt(true);
         setSpinClass("twist-spin");
         setTimeout(() => {
           setSpinClass("twist-img");
         }, 500);
-        if (move === "Twist It!") {
-          checkAction("Twist It!");
+        if (move === "Spin It!") {
+          checkAction("Spin It!");
         } else {
           checkAction("");
         }

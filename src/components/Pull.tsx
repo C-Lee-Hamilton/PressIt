@@ -11,7 +11,6 @@ import { usePageContext } from "../PageContext";
     const Pull: React.FC = () => {
         const {started,move,setSmashIt,setPullIt,setSpinIt,checkAction}=usePageContext();
         const pullAudio:any = new Audio(PullSound);
-        const pullAudioTrigger=pullAudio.play;
         const [pullImgSrc,setPullImgSrc]=useState<any>(PullIMG2);
 
         const pull = () => {
@@ -19,7 +18,8 @@ import { usePageContext } from "../PageContext";
              setSpinIt(false);
             setSmashIt(false);
             setPullIt(true);
-            pullAudioTrigger;
+            pullAudio.volume=.2;
+            pullAudio.play();
             setPullImgSrc(PullIMG);
             setTimeout(() => {
               setPullImgSrc(PullIMG2);

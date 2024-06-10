@@ -1,26 +1,29 @@
 .Game {
   height: 100vh;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.header h1 {
-  font-size: large;
+  margin: 0;
+  padding: 0;
+  border: rebeccapurple outset 4px;
+  background-color: blueviolet;
+  background-image: linear-gradient(
+    black,
+    black,
+    black,
+    #170726,
+    #2e0e4c,
+    #451572,
+    #5c1c98,
+    #7323be,
+    #8a2be2
+  );
 }
 
 .twist-container {
-  /* float: left; */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
-  background-color: black;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
+  width: 205px;
+  height: 205px;
 }
 
 .center-press {
@@ -41,7 +44,6 @@
 }
 .pull-container {
   float: right;
-  margin-right: 10vw;
   display: flex;
   align-items: top;
   justify-content: center;
