@@ -1,6 +1,6 @@
 import SmashSound from "../assets/sound/smashIt-effect.mp3";
 import { usePageContext } from "../PageContext";
-
+import "../styles/Smash.css";
 
 
     const Smash: React.FC = () => {
@@ -22,16 +22,15 @@ import { usePageContext } from "../PageContext";
             }
           };
 
-
-
-        return (
-         <div className="center-press">
-        <div className="press-container">
-           <button className="press-button" onClick={started ? press : startGame}>
-              <h1>{started? "Smash It" : "Start"}</h1>
-            </button>
-       </div>
-      </div>
+      return (
+        <div className="smash-container">
+            <div className="button-outline">
+              <button className="smash-button" onClick={started ? press : startGame}>
+                <h1>{started? "Smash It!" : "START"}</h1>
+              </button>
+            </div>
+        </div>
         );
       };
-      export default Smash;
+
+   export default Smash;

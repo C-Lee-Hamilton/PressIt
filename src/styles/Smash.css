@@ -1,0 +1,35 @@
+.smash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-image: url("../assets/images/board.png");
+  background-size: contain;
+  border-radius: 0% 70px 0% 70px;
+  padding: 15px;
+}
+.button-outline {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: rgba(72, 5, 5, 0.523);
+  border: 1px red ridge;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smash-button {
+  cursor: pointer;
+  font-family: Sedg;
+  border-radius: 50%;
+  height: 110px;
+  width: 110px;
+  background-color: rgba(101, 6, 6, 0.523);
+  color: blueviolet;
+  text-shadow: 2px 2px 4px black, 0 0 25px black, 0 0 5px black;
+  border: 2px red solid;
+}
+
+.button-outline :active {
+  transform: scale(0.98);
+}

@@ -7,9 +7,9 @@ import { usePageContext } from './PageContext';
 
 import SmashInst from "./assets/sound/SmashIt.mp3";
 import PullInst from "./assets/sound/PullIt.mp3";
-import TwistInst from "./assets/sound/SpinIt.mp3";
+import SpinInst from "./assets/sound/SpinIt.mp3";
 import LoseMP3 from "./assets/sound/gameover.mp3";
-import './App.css'
+import './Game.css'
 
 function Game() {
 
@@ -17,7 +17,7 @@ function Game() {
 
   const smashInsAudio:any = new Audio(SmashInst);
   const pullInsAudio:any = new Audio(PullInst);
-  const twistInsAudio:any = new Audio(TwistInst);
+  const spinInsAudio:any = new Audio(SpinInst);
   const loseAudio:any = new Audio(LoseMP3);
   
   useEffect(() => {
@@ -44,7 +44,7 @@ function Game() {
      } else if (move === "Pull It!") {
        pullInsAudio.play();
      } else if (move === "Spin It!") {
-       twistInsAudio.play();
+       spinInsAudio.play();
      }
      else if (move === "You Lose") {
        loseAudio.play();
@@ -55,9 +55,15 @@ function Game() {
 return (
   <div className="Game">
     <Header/>
-    <Spin /> 
-    <Smash/>
-    <Pull /> 
+   <div className="Game-div">
+      <div className="Game-container">
+        <Spin /> 
+        <Smash/>
+        <Pull /> 
+      </div>
+      </div>
+    
+   
   </div>
   )
 }

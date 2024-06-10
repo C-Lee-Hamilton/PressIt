@@ -1,0 +1,61 @@
+@font-face {
+  font-family: Sedg;
+  src: url(./styles//SedgwickAve-Regular.ttf);
+}
+
+.Game {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Sedg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: rebeccapurple outset 4px;
+  background-image: linear-gradient(
+    black,
+    black,
+    black,
+    #170726,
+    #2e0e4c,
+    #451572,
+    #5c1c98,
+    #7323be,
+    #8a2be2
+  );
+}
+
+.Game-div {
+  width: 100%;
+  max-width: 700px;
+  padding: 0;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Game-container {
+  width: 90%;
+  max-width: 650px;
+  filter: drop-shadow(0 0 10px red);
+}
+
+.pull-container {
+  float: right;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  background-color: black;
+  width: 90px;
+  height: 45px;
+  background-image: url("./assets/images/board.png");
+  background-size: cover;
+}
+.pull-img {
+  cursor: pointer;
+  margin-top: 30px;
+  position: absolute;
+  width: 90px;
+}

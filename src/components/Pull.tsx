@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PullIMG from "../assets/pulled-1.png";
-import PullIMG2 from "../assets/pulled-0.png";
+import PullIMG from "../assets/images/pulled-1.png";
+import PullIMG2 from "../assets/images/pulled-0.png";
 import PullSound from "../assets/sound/pull-effect.mp3";
 import { usePageContext } from "../PageContext";
 

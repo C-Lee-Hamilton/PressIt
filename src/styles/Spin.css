@@ -1,0 +1,30 @@
+.spin-container {
+  background-color: black;
+  background-image: url("../assets/images/board.png");
+  background-size: cover;
+  height: 150px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px 10px 0px 0px;
+}
+.spin-img {
+  height: 140px;
+  width: 140px;
+  cursor: pointer;
+}
+.spin-animation {
+  height: 140px;
+  width: 140px;
+  animation: spinner 1s linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
