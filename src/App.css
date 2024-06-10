@@ -1,20 +1,14 @@
-.App {
+.Game {
   height: 100vh;
 }
 
-h4 {
-  background-color: black;
-  color: lime;
-  margin: 0;
-  width: 100px;
-  border: 3px lime ridge;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-h3 {
-  background-color: black;
-  color: lime;
-  margin-top: 10px;
-  width: 100px;
-  border: 3px lime ridge;
+.header h1 {
+  font-size: large;
 }
 
 .twist-container {
@@ -31,7 +25,7 @@ h3 {
 
 .center-press {
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   align-items: center;
 }
 .press-container {
@@ -64,12 +58,10 @@ h3 {
 }
 
 .twist-img {
-  z-index: 1;
   height: 200px;
   width: 200px;
 }
 .twist-spin {
-  z-index: 1;
   height: 200px;
   width: 200px;
   animation: spin 1s linear;
