@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode} from "react";
+
 
 interface PageContextType {
  spinIt:boolean;
@@ -18,6 +19,7 @@ interface PageContextType {
  getRandomMove:()=>void;
  checkAction:(action:string)=>void;
  startGame:()=>void;
+ 
 }
 
 const PageContext = createContext<PageContextType | undefined>(undefined);
@@ -41,12 +43,13 @@ export const PageProvider: React.FC<PageProviderProps> = ({ children }) => {
     const [move, setMove] = useState<string>("");
     const [started, setStarted] = useState<boolean>(false);
     const [score, setScore] = useState<number>(0);
-    const [highScore, setHighScore] = useState<number>(0);
+    const [highScore, setHighScore] = useState<number>(Number(window.localStorage.getItem("HSLocal")));
     const moves = ["Spin It!", "Smash It!", "Pull It!"];
 
     const startGame = () => {
         setStarted(true);
         getRandomMove();
+        
       };
 
     const getRandomMove= () => {
@@ -64,16 +67,18 @@ export const PageProvider: React.FC<PageProviderProps> = ({ children }) => {
         if (action === move) {
           setScore((prevScore) => prevScore + 1);
             if (score + 1 > highScore) {
+            window.localStorage.setItem("HSLocal", JSON.stringify(score+1));
             setHighScore(score + 1);
           }
           getRandomMove();
         } else {
           setStarted(false);
-          setMove("You Lose");
+          setMove("Game Over!");
           setScore(0);
           setSpinIt(false);
           setSmashIt(false);
           setPullIt(false);
+         
         }
       }, 500);
       

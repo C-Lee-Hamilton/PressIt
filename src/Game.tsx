@@ -26,13 +26,13 @@ function Game() {
     const timer = setTimeout(() => {
       if (!spinIt && !smashIt && !pullIt) {
         setStarted(false);
-        setMove("You Lose");
+        setMove("Game Over!");
         setScore(0);
         setSpinIt(false);
         setSmashIt(false);
         setPullIt(false);
       }
-    }, 3000);
+    }, score < 10 ? 7000 : score<20 ? 5000 : score<30 ? 4000 : score <40 ? 3000 : 2500 );
     
     return () => clearTimeout(timer); 
   }, [score,started]);
@@ -46,7 +46,8 @@ function Game() {
      } else if (move === "Spin It!") {
        spinInsAudio.play();
      }
-     else if (move === "You Lose") {
+     else if (move === "Game Over!") {
+      loseAudio.volume=(.5);
        loseAudio.play();
      }
      

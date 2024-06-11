@@ -50,7 +50,7 @@
   background-color: black;
   width: 90px;
   height: 45px;
-  background-image: url("./assets/images/board.png");
+  background-image: url("./assets/images/board.gif");
   background-size: cover;
 }
 .pull-img {

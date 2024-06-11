@@ -13,7 +13,7 @@ import "../styles/Smash.css";
             setSpinIt(false);
             setPullIt(false);
             setSmashIt(true);
-            smashAudio.volume=.2;
+            smashAudio.volume=.5;
             smashAudio.play();
             if (move === "Smash It!") {
               checkAction("Smash It!");
